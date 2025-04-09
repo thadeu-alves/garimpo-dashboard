@@ -17,33 +17,37 @@ interface TableProducts{
 
 export default function Table({products, header} : TableProducts) {
   return (
-    <ShadTable
+    <div 
+          className="border-2 border-gray-200 rounded-2xl p-2"
+        >
+          <ShadTable
         className="w-full"
-    >
-        <TableCaption>All {header}</TableCaption>
-        <TableHeader>
-            <TableRow>
-                <TableHead className="md:w-xl">Title</TableHead>
-                <TableHead>Short</TableHead>
-                <TableHead>Categorie</TableHead>
-                <TableHead>Link</TableHead>
-            </TableRow>
-        </TableHeader>
-        <TableBody>
-            {
-                products.map((product : Product) => {
-                    return (
-                        <TableRow key={product.link}>
-                            <TableCell className="font-medium">{product.title}</TableCell>
-                            <TableCell>{product.short}</TableCell>
-                            <TableCell>{product.slug.toUpperCase()}</TableCell>
-                            <ClipboardCopy product={product}/>
-                        </TableRow>
-                    )
-                })
-            }
-        </TableBody>
-    </ShadTable>
+        >
+            <TableCaption>{header}</TableCaption>
+            <TableHeader>
+                <TableRow>
+                    <TableHead className="md:w-xl">Title</TableHead>
+                    <TableHead>Short</TableHead>
+                    <TableHead>Categorie</TableHead>
+                    <TableHead>Link</TableHead>
+                </TableRow>
+            </TableHeader>
+            <TableBody>
+                {
+                    products.map((product : Product) => {
+                        return (
+                            <TableRow key={product.link}>
+                                <TableCell className="font-medium">{product.title}</TableCell>
+                                <TableCell>{product.short}</TableCell>
+                                <TableCell>{product.slug.toUpperCase()}</TableCell>
+                                <ClipboardCopy product={product}/>
+                            </TableRow>
+                        )
+                    })
+                }
+            </TableBody>
+        </ShadTable>
+    </div>
 
   )
 }

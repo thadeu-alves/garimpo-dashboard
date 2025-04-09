@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
             <nav 
-                className="flex-shrink-0 bg-gray-300 h-full px-2 py-6 flex flex-col justify-between items-center min-w-16 md:w-60"
+                className="flex-shrink-0 bg-gray-300 h-full px-2 py-6 flex flex-col justify-between items-center min-w-16 lg:w-60"
             >
                 
                 
@@ -32,7 +32,7 @@ const Header = () => {
                                 className={`${path == "/" ? "brightness-0 invert" : ""}`}
                             />
                             <p
-                                className={cn("text-xl font-semibold hidden md:flex", path == "/" ? "text-white" : "")}
+                                className={cn("text-xl font-semibold hidden lg:flex", path == "/" ? "text-white" : "")}
                             >Dashboard</p>
                         </li>
                     </Link>
@@ -46,7 +46,7 @@ const Header = () => {
                                 className={`${path == "/products" ? "brightness-0 invert" : ""}`}
                             />
                             <p
-                                className={cn("text-xl font-semibold hidden md:flex", path == "/products" ? "text-white" : "")}
+                                className={cn("text-xl font-semibold hidden lg:flex", path == "/products" ? "text-white" : "")}
                             >Products</p>
                         </li>
                     </Link>
@@ -60,7 +60,7 @@ const Header = () => {
                                 className={`${path == "/social" ? "brightness-0 invert" : ""}`}
                             />
                             <p
-                                className={cn("text-xl font-semibold hidden md:flex", path == "/social" ? "text-white" : "")}
+                                className={cn("text-xl font-semibold hidden lg:flex", path == "/social" ? "text-white" : "")}
                             >Social Media</p>
                         </li>
                     </Link>

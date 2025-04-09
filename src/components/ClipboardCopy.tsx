@@ -25,12 +25,10 @@ export function ClipboardCopy({
   };
 
   return (
-    <div>
       <TableCell
         onClick={handleCopy}
       >
         {isCopied ? "Copiado!" : product.link.replace("https://s.shopee.com.br/", "")}
       </TableCell>
-    </div>
   );
 }

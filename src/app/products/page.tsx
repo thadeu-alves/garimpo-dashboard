@@ -4,6 +4,7 @@ import { Product } from "@/utils/types";
 interface Categories {
   topo: Product[];
   baixo: Product[];
+  perfumes: Product[];
   acessorios: Product[];
 }
 
@@ -15,6 +16,7 @@ export default async function Products() {
   const categories : Categories = {
     topo: [],
     baixo: [],
+    perfumes: [],
     acessorios: [],
   };
 
@@ -23,28 +25,19 @@ export default async function Products() {
       categories.topo.push(product);
     }else if(product.slug == "bx"){
       categories.baixo.push(product)
+    }else if(product.slug == "pf"){
+      categories.perfumes.push(product);
     }else if(product.slug == "ac"){
       categories.acessorios.push(product);
     }
   })
 
   return (
-    <main className="p-4 space-y-4">
-        <div 
-          className="border-2 border-gray-200 rounded-2xl p-2"
-        >
-          <Table products={categories.topo} header="Topo" />
-        </div>
-        <div 
-          className="border-2 border-gray-200 rounded-2xl p-2"
-        >
-          <Table products={categories.baixo} header="Baixo" />
-        </div>
-        <div 
-          className="border-2 border-gray-200 rounded-2xl p-2"
-        >
-          <Table products={categories.acessorios} header="Acessorios" />
-        </div>
-    </main>
+    <section className="space-y-4">
+        <Table products={categories.topo} header="Topo" />
+        <Table products={categories.baixo} header="Baixo" />
+        <Table products={categories.perfumes} header="Perfumes" />
+        <Table products={categories.acessorios} header="Acessorios" />
+    </section>
   );
 }

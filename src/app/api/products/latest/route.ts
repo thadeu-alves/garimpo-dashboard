@@ -8,7 +8,7 @@ export async function GET() {
 
     const query = `
     {
-      allProdutos(first: 100) {
+      allProdutos(first: 8, orderBy: _createdAt_DESC) {
         title
         short
         link
